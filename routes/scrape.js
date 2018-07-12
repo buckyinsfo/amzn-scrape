@@ -7,15 +7,17 @@ const datetime      = require('node-datetime');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-    const asin = req.params.asin ? req.params.asin : 'B01CD5VC92'//*/ 'B06XGPTPFH'
+    const asin = req.params.asin ? req.params.asin : 'B01CD5VC92'
     const url = 'http://www.amazon.com/dp/'.concat( asin )
     console.log( 'asin=' + req.params.asin )
+    console.log( req.baseUrl )
+    console.log( req )
     
     //?s=pc&ie=UTF8&qid=1531353552&sr=1-7&keywords=raspberry+pi+3+b%2B'
     const query = {
         s: 'pc',
         ie: 'UTF8',
-        qid: '1531353552',
+    //    qid: '1531353552',
     }
 
     superagent

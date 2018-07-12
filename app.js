@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/scrape', scrapeRouter)
+app.use('/scrape/:asin', scrapeRouter)
 app.use('/api', apiRouter)
 
 // catch 404 and forward to error handler
