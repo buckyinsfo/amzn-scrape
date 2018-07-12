@@ -2,10 +2,6 @@ const express       = require('express')
 const router        = express.Router()
 const superagent    = require('superagent')
 const cheerio       = require('cheerio')
-
-const xpath         = require('xpath')
-const DOMParser     = require('xmldom').DOMParser
-const XMLSerializer = require('xmldom').XMLSerializer
  
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -31,36 +27,21 @@ router.get('/', function(req, res, next) {
             return
         }
 
-        // Create an XMLDom Element:
-        //const doc = new DOMParser().parseFromString( response.text )
-        //const doc = new dom().parseFromString(response.text)
         const $ = cheerio.load(response.text)
+        
         //const body = $('body')
-        const price = $('[id=price_inside_buybox]').text()
-        const title = $('[id=productTitle]').text()
-        const seller = $('[id=shipsFromSoldByInsideBuyBox_feature_div]').text()
-        /*
-        // Parse XML with XPath:
-        const name = '' // xpath.select('//h1[@id="title"]//text()', doc)
-        const salePrice = '' // '//span[contains(@id,"ourprice") or contains(@id,"saleprice")]/text()'
-        const origPrice = '' // '//td[contains(text(),"List Price") or contains(text(),"M.R.P") or contains(text(),"Price")]/following-sibling::td/text()'
-        */
-
+        const price = $('[id=price_inside_buybox]').html().trim()
+        const title = $('[id=productTitle]').html().trim()
+        const sellerBox = $('[id=shipsFromSoldByInsideBuyBox_feature_div]')
+        const seller = sellerBox.find('a').html().trim()
+        
         const data = [{
             title: title,
             price: price,
             seller: seller,
         }]
 
-        //res.send(body.html())
-        //res.send(price.html())
-        //res.send( doc.stringify( doc ) )
         res.send( data )
-
-        //const s = new XMLSerializer()
-        //res.send( s.serializeToString( doc ) )
-
-
     })
 })
 
