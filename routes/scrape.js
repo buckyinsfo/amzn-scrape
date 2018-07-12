@@ -6,7 +6,8 @@ const cheerio       = require('cheerio')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-    const url = 'https://www.amazon.com/Raspberry-Pi-RASPBERRYPI3-MODB-1GB-Model-Motherboard/dp/B01CD5VC92/ref=sr_1_7'
+    //const url = 'https://www.amazon.com/Raspberry-Pi-RASPBERRYPI3-MODB-1GB-Model-Motherboard/dp/B01CD5VC92/ref=sr_1_7'
+    const url = 'http://www.amazon.com/dp/B01CD5VC92'
     
     //?s=pc&ie=UTF8&qid=1531353552&sr=1-7&keywords=raspberry+pi+3+b%2B'
     const query = {
