@@ -1,15 +1,16 @@
-var createError = require('http-errors')
-var express = require('express')
-var path = require('path')
-var cookieParser = require('cookie-parser')
-var logger = require('morgan')
+const createError = require('http-errors')
+const express = require('express')
+const path = require('path')
+const cookieParser = require('cookie-parser')
+const logger = require('morgan')
 
-var indexRouter = require('./routes/index')
-var usersRouter = require('./routes/users')
-var scrapeRouter = require('./routes/scrape')
-var apiRouter = require('./routes/api')
+const indexRouter = require('./routes/index')
+const passThru = require('./routes/passThru' )
+const usersRouter = require('./routes/users')
+const scrapeRouter = require('./routes/scrape')
+const apiRouter = require('./routes/api')
 
-var app = express()
+const app = express()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 app.use('/', indexRouter)
+app.use('/passThru', passThru )
 app.use('/users', usersRouter)
 app.use('/scrape', scrapeRouter)
 app.use('/scrape/:asin', scrapeRouter)
@@ -44,4 +46,9 @@ app.use(function(err, req, res, next) {
   res.render('error')
 })
 
+// Set port
+/*app.set('port', process.env.PORT || 3001);
+const server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
+})*/
 module.exports = app
