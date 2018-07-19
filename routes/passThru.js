@@ -7,10 +7,9 @@ const datetime      = require('node-datetime');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-    const asin = 'B01CD5VC92'
+    const asin = req.params.asin ? req.params.asin : 'B01CD5VC92'
     const url = 'http://www.amazon.com/dp/'.concat( asin )
     
-    //?s=pc&ie=UTF8&qid=1531353552&sr=1-7&keywords=raspberry+pi+3+b%2B'
     const query = {
         s: 'pc',
         ie: 'UTF8',
