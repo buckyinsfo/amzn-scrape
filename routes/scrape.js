@@ -36,8 +36,7 @@ router.get('/', function(req, res, next) {
 
         const price = $('[id=price_inside_buybox]').html()
         const title = $('[id=productTitle]').html() 
-        const sellerBox = $('[id=merchant-info]')
-        const seller = sellerBox.find('a').html() 
+        const seller = $('[id=bylineInfo]').html()
         
         const data = [{
             timestamp: timestamp,
@@ -52,3 +51,6 @@ router.get('/', function(req, res, next) {
 })
 
 module.exports = router
+
+// old tags
+//merchant-info
