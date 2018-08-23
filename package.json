@@ -19,11 +19,13 @@
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
-    "node-datetime": "^2.0.6",
-    "superagent": "^3.8.3"
+    "node-datetime": "^2.0.9",
+    "superagent": "^3.8.3",
+    "twilio": "^3.19.1"
   },
   "devDependencies": {
     "debug": "~2.6.9",
-    "nodemon": "^1.18.1"
+    "dotenv": "^6.0.0",
+    "nodemon": "^1.18.3"
   }
 }
