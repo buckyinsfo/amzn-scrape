@@ -34,7 +34,7 @@ router.get('/', function(req, res, next) {
         const $ = cheerio.load(response.text)
         const timestamp = datetime.create().format('m/d/Y H:M:S');
 
-        const price = $('[id=newBuyBoxPrice]').html()
+        const price = $('[id=price_inside_buybox]').html()
         const title = $('[id=productTitle]').html() 
         const seller = $('[id=bylineInfo]').html()
         
