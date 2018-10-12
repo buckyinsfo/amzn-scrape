@@ -5,7 +5,7 @@ const cheerio       = require('cheerio')
 const datetime      = require('node-datetime');
  
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
 
     const asin = req.params.asin ? req.params.asin : 'B01CD5VC92'
     const url = 'http://www.amazon.com/dp/'.concat( asin )
@@ -17,18 +17,18 @@ router.get('/', function(req, res, next) {
     }
 
     superagent
-    .get(url)
-    .query(query)
-    .end( (err, response) => {
-        if (err) {
-          res.json({
-              confirmation: 'fail',
-              message: err
-            })
-            return
-        }
-        res.send( response.text )
-    })
+        .get(url)
+        .query(query)
+        .end( (err, response) => {
+            if (err) {
+                res.json({
+                        confirmation: 'fail',
+                        message: err
+                    })
+                return
+            }
+            res.send( response.text )
+        })
 })
 
 module.exports = router

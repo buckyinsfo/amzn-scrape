@@ -1,9 +1,15 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express')
+const router = express.Router()
+const mongoose = require('mongoose')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('*TODO* - respond with a list of users');
-});
+const UserController = require('../controllers/users')
 
-module.exports = router;
+router.get('/', UserController.get_all )
+
+router.post('/login', UserController.login )
+
+router.post('/signup', UserController.signup )
+
+router.delete('/:userId', UserController.delete_byId)
+
+module.exports = router

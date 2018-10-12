@@ -4,28 +4,30 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon ./bin/www",
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/www"
   },
   "engines": {
     "node": "8.11.3"
   },
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "cheerio": "^1.0.0-rc.2",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",
     "express": "~4.16.0",
     "fs": "0.0.1-security",
     "http-errors": "~1.6.2",
+    "mongoose": "^5.2.13",
     "morgan": "~1.9.0",
-    "node-datetime": "^2.0.9",
+    "node-datetime": "^2.1.0",
     "pug": "^2.0.3",
     "superagent": "^3.8.3",
-    "twilio": "^3.19.1"
+    "twilio": "^3.19.2"
   },
   "devDependencies": {
     "debug": "~2.6.9",
     "dotenv": "^6.0.0",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.4"
   }
 }

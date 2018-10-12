@@ -1,0 +1,7 @@
+{
+    "comment": "/* Rename this file to 'nodemon.json' and edit to include your setup values. */",
+    "env": {
+        "MONGO_ATLAS_PW": "DVar660HyDQ2xucO",
+        "JWT_SECRET_KEY": "mySecretKey"
+    }
+}
