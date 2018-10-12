@@ -2,6 +2,7 @@
     "comment": "/* Rename this file to 'nodemon.json' and edit to include your setup values. */",
     "env": {
         "MONGO_ATLAS_PW": "DVar660HyDQ2xucO",
+        "MONGO_ATLAS_CONNECT" : "@amzn-scrape-micro-0-shard-00-00-m52p6.mongodb.net:27017,amzn-scrape-micro-0-shard-00-01-m52p6.mongodb.net:27017,amzn-scrape-micro-0-shard-00-02-m52p6.mongodb.net:27017/test?ssl=true&replicaSet=amzn-scrape-micro-0-shard-0&authSource=admin&retryWrites=true",
         "JWT_SECRET_KEY": "mySecretKey"
     }
 }

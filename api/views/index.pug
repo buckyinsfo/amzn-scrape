@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1.my-header Welcome to #{title}
+  br
+  p This is a RESTful api for providing product data for items listed on Amazon.
+  br
+  p HTTP GET: ~/scrape/[asin of interest]
+  br
+  p The data returned:
+  ol
+    li Date & Time
+    li ASIN - (Amazon Standard Identification Number)
+    li Title
+    li Price
+    li Seller
+
+
