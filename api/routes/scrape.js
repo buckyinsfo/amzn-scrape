@@ -5,5 +5,6 @@ const authCheck     = require('../auth/auth-check')
 const ScrapeController = require('../controllers/scrape')
 
 router.get('/', authCheck,  ScrapeController.get_product_info )
+router.get('/:asin', authCheck,  ScrapeController.get_product_info )
 
 module.exports = router

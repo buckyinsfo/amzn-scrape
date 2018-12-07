@@ -3,11 +3,17 @@ const cheerio       = require('cheerio')
 const datetime      = require('node-datetime')
 
 exports.get_product_info = (req, res, next) => {
-    const asin = req.params.asin ? req.params.asin : 'B01CD5VC92'
+    const asin = req.params.asin 
+
+    console.log( "asin ", asin )
+
+    if ( asin == null ) {
+        return res.status(400).json({
+            message: "ASIN invalid"
+        })
+   }
+
     const url = 'http://www.amazon.com/dp/'.concat( asin )
-    console.log( 'asin=' + req.params.asin )
-    console.log( req.baseUrl )
-    
     const query = {
         s: 'pc',
         ie: 'UTF8',
